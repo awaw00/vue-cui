@@ -16,7 +16,11 @@
       display: inline-block;
       outline-offset: 1px;
     }
-
+  }
+  .wave-button{
+    &:not(:last-child){
+      margin-right: 10px;
+    }
   }
 }
 .loopper(@counter) when (@counter > 0){
@@ -44,6 +48,8 @@ div#app(:class='[themeStyle]')
   br
   progress-bar(:percentage='progressBar.percentage')
   br
+  wave-button
+    span Default
   wave-button(:btn-type='["raised", "primary"]')
     span Primary
   wave-button(:btn-type='["raised", "accent"]')
