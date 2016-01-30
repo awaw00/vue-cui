@@ -23,7 +23,7 @@
       color: rgb(166, 166, 166);
     }
   }
-  input[type='text']{
+  input{
     border: none;
     position: absolute;
     left: 0;
@@ -63,7 +63,7 @@
 div.text-input
   label(:class='{"label-shrink": labelShrink, "label-spread": !labelShrink}') {{label}}
   div.text-input-mask(@click.stop='getFocus', v-show='!focused')
-  input(type='text', v-model='content', @blur='lostFocus')
+  input(:type='contentType', v-model='content', @blur='lostFocus')
   div.text-input-border(v-show='focused', transition='input-border')
 </template>
 <script>
@@ -74,6 +74,10 @@ export default {
   props: {
     content: {
       twoWay: true
+    },
+    contentType: {
+      type: String,
+      default: 'text'
     },
     label: {
       type: String

@@ -42,7 +42,7 @@ div#app(:class='[themeStyle]')
     h2 colorful ui components for vue.js
   div.color-selections
     div(v-for='t in themes', :class='"theme-" + t', @click='theme = t')
-  text-input(:label='textInput.label', :value.sync='textInput.value')
+  text-input(:label='textInput.label', :value.sync='textInput.value', content-type='password')
   br
   select-input(:label='selectInput.label', :value.sync='selectInput.value', :key.sync='selectInput.key', :options='selectInput.options')
   br
