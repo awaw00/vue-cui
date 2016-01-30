@@ -1,0 +1,223 @@
+.list-transition{
+  transform-origin: top;
+  transition: all .2s ease;
+}
+.list-enter, .list-leave{
+  transform: scaleY(0);
+}
+.input-border-transition{
+
+}
+.input-border-enter{
+  animation: input-border-in .2s;
+}
+.input-border-leave{
+  animation: input-border-out .2s;
+}
+@keyframes input-border-in{
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes input-border-out{
+  to {
+    transform: scaleX(0);
+  }
+}
+.bubble-transition{
+
+}
+.bubble-enter{
+  animation: bubble-in .3s;
+}
+.bubble-leave{
+  animation: bubble-out .2s;
+}
+@keyframes bubble-in{
+  0% {
+    transform: scale(0, 0) translateX(-50%) translateY(-50%);
+  }
+  50% {
+    transform: scale(1.2, 1.2) translateX(-50%) translateY(-50%);
+  }
+  100% {
+    transform: scale(1, 1) translateX(-50%) translateY(-50%);
+  }
+}
+@keyframes bubble-out{
+  0% {
+    transform: scale(1, 1) translateX(-50%) translateY(-50%);
+  }
+  50% {
+    transform: scale(1.1, 1.1) translateX(-50%) translateY(-50%);
+  }
+  100% {
+    transform: scale(0, 0) translateX(-50%) translateY(-50%);
+  }
+}
+
+.dropdown-transition{
+
+}
+.dropdown-enter{
+  animation: dropdown-in .5s;
+}
+.dropdown-leave{
+  animation: dropdown-out .5s;
+}
+@keyframes dropdown-in{
+  from {
+    transform: scale(1, 0);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+@keyframes dropdown-out{
+  from {
+    tranform: scale(1, 1);
+  }
+  to {
+    transform: scale(1, 0);
+  }
+}
+
+.pageleft-trainsition{
+
+}
+.pageleft-enter{
+  animation: pageleft-in .3s;
+}
+.pageleft-leave{
+  animation: pageleft-out .3s;
+}
+@keyframes pageleft-in{
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes pageleft-out{
+  to {
+    transform: translateX(-100%);
+  }
+}
+.pageright-transition{
+
+}
+.pageright-enter{
+  animation: pageright-in .3s;
+}
+.pageright-leave{
+  animation: pageright-out .3s;
+}
+@keyframes pageright-in{
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes pageright-out{
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.drawer-left-trainsition{
+
+}
+.drawer-left-enter{
+  animation: drawer-left-in .3s;
+}
+.drawer-left-leave{
+  animation: drawer-left-out .3s;
+}
+@keyframes drawer-left-in{
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes drawer-left-out{
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.drawer-right-trainsition{
+
+}
+.drawer-right-enter{
+  animation: drawer-right-in .3s;
+}
+.drawer-right-leave{
+  animation: drawer-right-out .3s;
+}
+@keyframes drawer-right-in{
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes drawer-right-out{
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.drawer-top-trainsition{
+
+}
+.drawer-top-enter{
+  animation: drawer-top-in .3s;
+}
+.drawer-top-leave{
+  animation: drawer-top-out .3s;
+}
+@keyframes drawer-top-in{
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes drawer-top-out{
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.drawer-bottom-trainsition{
+
+}
+.drawer-bottom-enter{
+  animation: drawer-bottom-in .3s;
+}
+.drawer-bottom-leave{
+  animation: drawer-bottom-out .3s;
+}
+@keyframes drawer-bottom-in{
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes drawer-bottom-out{
+  to {
+    transform: translateY(100%);
+  }
+}

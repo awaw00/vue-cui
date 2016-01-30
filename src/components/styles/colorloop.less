@@ -1,0 +1,66 @@
+@import "./color.less";
+.color-loop(@counter) when (@counter > 0){
+  .color-loop((@counter - 1));
+  @color: ~"base-color-@{counter}";
+  .color-@{counter} {
+    .select-input{
+      label{
+        &.label-shrink{
+          color: @@color;
+        }
+      }
+      .select-input-border{
+        border-bottom-color: @@color;
+      }
+      > .select-options{
+        > .select-option{
+          &:hover{
+            .color-hover(@counter);
+          }
+        }
+      }
+    }
+    .text-input{
+     label{
+       &.label-shrink{
+         color: @@color;
+       }
+     }
+     .text-input-border{
+       border-bottom-color: @@color;
+     }
+   }
+   .progress-bar-container{
+     background-color: lighten(@@color, 30%);
+     .progress-bar{
+       background-color: @@color;
+     }
+   }
+  }
+}
+.color-loop(@color-count);
+
+.theme-color-loop(@counter) when (@counter > 0){
+  .theme-color-loop((@counter - 1));
+  .color-@{counter}{
+    .color-normal{
+      .color-normal(@counter);
+    }
+    .color-focus{
+      .color-focus(@counter);
+    }
+    .color-hover{
+      .color-hover(@counter);
+    }
+    .color-accent-normal{
+      .color-accent-normal(@counter);
+    }
+    .color-accent-focus{
+      .color-accent-focus(@counter);
+    }
+    .color-accent-hover{
+      .color-accent-hover(@counter);
+    }
+  }
+}
+.theme-color-loop(@color-count);

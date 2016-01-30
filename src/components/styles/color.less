@@ -1,0 +1,94 @@
+@color-count: 16;
+
+@base-color-1: #03A9F4;
+@base-color-2: #E91E63;
+@base-color-3: #9C27B0;
+@base-color-4: #1976D2;
+@base-color-5: #00BCD4;
+@base-color-6: #009688;
+@base-color-7: #4CAF50;
+@base-color-8: #8BC34A;
+@base-color-9: #CDDC39;
+@base-color-10:#FFEB3B;
+@base-color-11:#FFC107;
+@base-color-12:#FF9800;
+@base-color-13:#FF5722;
+@base-color-14:#795548;
+@base-color-15:#9E9E9E;
+@base-color-16:#607D8B;
+
+.color-normal(@color-index){
+  @color: ~"base-color-@{color-index}";
+  background-color: @@color;
+  color: contrast(@@color, black, white, 50%);
+}
+
+.color-hover(@color-index){
+  @color: ~"base-color-@{color-index}";
+  @hoverColor: lighten(@@color, 15%);
+  background-color: @hoverColor;
+  color: contrast(@hoverColor, black, white, 50%);
+}
+
+.color-focus(@color-index){
+  @color: ~"base-color-@{color-index}";
+  @focusColor: darken(@@color, 15%);
+  background-color: @focusColor;
+  color: contrast(@focusColor, black, white, 50%);
+}
+
+.color-accent-normal(@color-index){
+  @color: ~"base-color-@{color-index}";
+  @accentColor: spin(@@color, 180);
+  background-color: @accentColor;
+  color: contrast(@accentColor, black, white, 50%);
+}
+.color-accent-hover(@color-index){
+  @color: ~"base-color-@{color-index}";
+  @accentColor: lighten(spin(@@color, 180), 10%);
+  background-color: @accentColor;
+  color: contrast(@accentColor, black, white, 50%);
+}
+.color-accent-focus(@color-index){
+  @color: ~"base-color-@{color-index}";
+  @accentColor: darken(spin(@@color, 180), 10%);
+  background-color: @accentColor;
+  color: contrast(@accentColor, black, white, 50%);
+}
+
+.mixin-color-normal(@count: @color-count) when (@count > 0){
+  .mixin-color-normal((@count - 1));
+  .color-@{count} &{
+    .color-normal(@count);
+  }
+}
+.mixin-color-hover(@count: @color-count) when (@count > 0){
+  .mixin-color-hover((@count - 1));
+  .color-@{count} &:hover{
+    .color-hover(@count);
+  }
+}
+.mixin-color-focus(@count: @color-count) when (@count > 0){
+  .mixin-color-focus((@count - 1));
+  .color-@{count} &:active, .color-@{count} &:focus{
+    .color-focus(@count);
+  }
+}
+.mixin-color-accent-normal(@count: @color-count) when (@count > 0){
+  .mixin-color-accent-normal((@count - 1));
+  .color-@{count} &{
+    .color-accent-normal(@count);
+  }
+}
+.mixin-color-accent-hover(@count: @color-count) when (@count > 0){
+  .mixin-color-accent-hover((@count - 1));
+  .color-@{count} &:hover{
+    .color-accent-hover(@count);
+  }
+}
+.mixin-color-accent-focus(@count: @color-count) when (@count > 0){
+  .mixin-color-accent-focus((@count - 1));
+  .color-@{count} &:active, .color-@{count} &:focus{
+    .color-accent-focus(@count);
+  }
+}
