@@ -17,9 +17,11 @@
       outline-offset: 1px;
     }
   }
-  .wave-button{
-    &:not(:last-child){
-      margin-right: 10px;
+  .wave-buttons{
+    .wave-button{
+      &:not(:last-child){
+        margin-right: 10px;
+      }
     }
   }
 }
@@ -48,14 +50,17 @@ div#app(:class='[themeStyle]')
   br
   progress-bar(:percentage='progressBar.percentage')
   br
-  wave-button
-    span Default
-  wave-button(:btn-type='["raised", "primary"]')
-    span Primary
-  wave-button(:btn-type='["raised", "accent"]')
-    span Accent
-  wave-button(:btn-type='["raised", "primary", "sharp"]')
-    span Sharp
+  div.wave-buttons
+    wave-button
+      span Default
+    wave-button(:btn-type='["raised", "primary"]')
+      span Primary
+    wave-button(:btn-type='["raised", "accent"]', @btn-click='dialogConfirm.show = true')
+      span Accent
+    wave-button(:btn-type='["raised", "primary", "sharp"]')
+      span Sharp
+  dialog-confirm(:show.sync='dialogConfirm.show', :btns='["ok"]')
+    {{dialogConfirm.content}}
 </template>
 
 <script>
@@ -63,12 +68,14 @@ import textInput from './components/TextInput'
 import selectInput from './components/SelectInput'
 import progressBar from './components/ProgressBar'
 import waveButton from './components/WaveButton'
+import dialogConfirm from './components/DialogConfirm'
 export default {
   components: {
     textInput,
     selectInput,
     progressBar,
-    waveButton
+    waveButton,
+    dialogConfirm
   },
   data () {
     return {
@@ -90,7 +97,11 @@ export default {
         percentage: 0
       },
       themes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
-      theme: 1
+      theme: 1,
+      dialogConfirm: {
+        show: false,
+        content: '删除后无法恢复，确定要删除该项目吗？'
+      }
     }
   },
   computed: {

@@ -12,7 +12,7 @@ npm install vue-cui
 
 ``` javascript
 // es6
-import textInput from 'vue-cui'
+import {textInput} from 'vue-cui'
 export default {
   components: {
     textInput

@@ -10,7 +10,7 @@
     z-index: 1001
   }
   .dialog-body{
-    padding: 8px;
+    padding: 16px;
     background-color: white;
     z-index: 1002;
     position: fixed;

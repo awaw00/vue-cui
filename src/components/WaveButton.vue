@@ -23,7 +23,6 @@
     height: 100%;
     display: block;
     color: inherit;
-    padding: .1em .2em;
     text-decoration: none;
     text-align: center;
     &:hover, &:active, &:visited{

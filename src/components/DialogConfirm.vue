@@ -8,7 +8,6 @@
     font-size: 1.3em;
     padding: 0 0 2px 0;
     margin-bottom: 20px;
-    border-bottom: 1px solid #000000;
   }
   .dialog-confirm-btns{
     padding-top: 10px;
@@ -27,17 +26,21 @@ dialog.dialog-confirm(:show='show')
   span.dialog-confirm-title {{title}}
   slot
   p.dialog-confirm-btns
-    span.btn.btn-primary(@click='okClick') {{okText}}
-    span.btn.btn-default(@click='cancelClick') {{cancelText}}
+    wave-button(v-if='hasOk', :btn-type='["primary", "raised"]', @btn-click='okClick')
+      {{okText}}
+    wave-button(v-if='hasCancel', @btn-click='cancelClick')
+      {{cancelText}}
 </template>
 <script>
 import './styles/common.less'
 import './styles/transition.less'
 import './styles/colorloop.less'
 import dialog from './Dialog'
+import waveButton from './WaveButton'
 export default {
   components: {
-    'dialog': dialog
+    'dialog': dialog,
+    'wave-button': waveButton
   },
   props: {
     title: {
@@ -56,6 +59,28 @@ export default {
       type: Boolean,
       default: false,
       twoWay: true
+    },
+    btns: {
+      type: Array,
+      default: ['ok', 'cancel']
+    }
+  },
+  computed: {
+    hasOk () {
+      for (let i = 0; i < this.btns.length; i++) {
+        if (this.btns[i] === 'ok') {
+          return true
+        }
+      }
+      return false
+    },
+    hasCancel () {
+      for (let i = 0; i < this.btns.length; i++) {
+        if (this.btns[i] === 'cancel') {
+          return true
+        }
+      }
+      return false
     }
   },
   methods: {
