@@ -1,6 +1,6 @@
 {
   "name": "vue-cui",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "colorful ui components for vue.js",
   "author": "Aaron Wang <aaron-wang@outlook.com>",
   "scripts": {
