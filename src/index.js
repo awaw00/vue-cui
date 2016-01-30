@@ -5,5 +5,6 @@ module.exports = {
   progressBar: require('./components/ProgressBar'),
   selectInput: require('./components/SelectInput'),
   textInput: require('./components/TextInput'),
+  waveButton: require('./components/WaveButton'),
   topBar: require('./components/TopBar')
 }
