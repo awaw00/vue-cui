@@ -1,6 +1,6 @@
 {
   "name": "vue-cui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "colorful ui components for vue.js",
   "author": "Aaron Wang <aaron-wang@outlook.com>",
   "scripts": {
@@ -11,6 +11,7 @@
     "type": "git",
     "url": "https://github.com/awaw00/vue-cui.git"
   },
+  "main": "./src/index.js",
   "dependencies": {
     "vue": "^1.0.15"
   },
