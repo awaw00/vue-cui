@@ -1,18 +1,18 @@
 
 /*!
  * Waves v0.7.4
- * http://fian.my.id/Waves 
- * 
- * Copyright 2014 Alfiana E. Sibuea and other contributors 
- * Released under the MIT license 
- * https://github.com/fians/Waves/blob/master/LICENSE 
+ * http://fian.my.id/Waves
+ *
+ * Copyright 2014 Alfiana E. Sibuea and other contributors
+ * Released under the MIT license
+ * https://github.com/fians/Waves/blob/master/LICENSE
  */
 
 .waves-transition (@transition) {
     -webkit-transition: @transition;
-    -moz-transition: @transition; 
+    -moz-transition: @transition;
     -o-transition: @transition;
-    transition: @transition;  
+    transition: @transition;
 }
 
 .waves-transform(@string) {
@@ -38,7 +38,7 @@
     -ms-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
-    
+
     .waves-ripple {
         position: absolute;
         border-radius: 50%;
@@ -70,11 +70,11 @@
         background: -moz-radial-gradient(@gradient);
         background: radial-gradient(@gradient);
     }
-    
+
     &.waves-classic .waves-ripple {
         background: rgba(0,0,0,0.2);
     }
-    
+
     &.waves-classic.waves-light .waves-ripple {
         background: rgba(255,255,255,0.4);
     }
@@ -84,7 +84,7 @@
     .waves-transition(none ~'!important');
 }
 
-.waves-button, 
+.waves-button,
 .waves-circle {
     .waves-transform(translateZ(0));
     -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);

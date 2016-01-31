@@ -63,7 +63,7 @@
 div.text-input
   label(:class='{"label-shrink": labelShrink, "label-spread": !labelShrink}') {{label}}
   div.text-input-mask(@click.stop='getFocus', v-show='!focused')
-  input(:type='contentType', v-model='content', @blur='lostFocus')
+  input(:type='contentType', @focus='getFocus', v-model='content', @blur='lostFocus')
   div.text-input-border(v-show='focused', transition='input-border')
 </template>
 <script>

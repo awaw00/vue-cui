@@ -1,9 +1,13 @@
-.list-transition{
-  transform-origin: top;
-  transition: all .2s ease;
+.menu-transition{
+  transition: max-height linear .3s;
+  max-height: 500px;
+  overflow: hidden;
 }
-.list-enter, .list-leave{
-  transform: scaleY(0);
+.menu-enter{
+  max-height: 0;
+}
+.menu-leave{
+  max-height: 0;
 }
 .input-border-transition{
 
