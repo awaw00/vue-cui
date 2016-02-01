@@ -27,6 +27,9 @@
     height: 100%;
   }
   .aside-menus{
+    .aside-menu{
+      display: block;
+    }
     overflow-y: auto;
     .aside-sub-menus{
       .aside-menu{

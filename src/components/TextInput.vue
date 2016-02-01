@@ -1,7 +1,6 @@
 <style lang='less'>
 @default-color: #FF5722;
 .text-input{
-  font-size: 20px;
   position: relative;
   min-height: 2em;
   max-height: 2em;

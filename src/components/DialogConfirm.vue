@@ -8,6 +8,7 @@
     font-size: 1.3em;
     padding: 0 0 2px 0;
     margin-bottom: 20px;
+    border-bottom: 1px solid #FFFFFF;
   }
   .dialog-confirm-btns{
     padding-top: 10px;
