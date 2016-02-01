@@ -74,7 +74,7 @@ export default {
     },
     btnType: {
       type: Array,
-      default: []
+      default: () => []
     }
   },
   computed: {

@@ -62,11 +62,12 @@ export default {
     },
     btns: {
       type: Array,
-      default: ['ok', 'cancel']
+      default: () => ['ok', 'cancel']
     }
   },
   computed: {
     hasOk () {
+      if (!this.btns) { return false }
       for (let i = 0; i < this.btns.length; i++) {
         if (this.btns[i] === 'ok') {
           return true
@@ -75,6 +76,7 @@ export default {
       return false
     },
     hasCancel () {
+      if (!this.btns) { return false }
       for (let i = 0; i < this.btns.length; i++) {
         if (this.btns[i] === 'cancel') {
           return true

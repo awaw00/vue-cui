@@ -21,14 +21,14 @@
     }
   }
 
-  > .iconfont{
+  > .cui-icon{
     float: right;
     margin-left: 20px;
     transition: ease all .2s;
     pointer-events: none;
   }
   .aside-menu-open{
-    &.iconfont{
+    &.cui-icon{
       transform: rotate(180deg);
     }
   }
@@ -40,11 +40,12 @@ div.aside-menu.waves-effect.waves-ripple(:class='{"color-focus": showSubMenu}')
   a(v-if='link && !hasSubMenu', :href='link')
     slot
   slot(v-else)
-  span.iconfont(v-if='hasSubMenu', :class='{"aside-menu-open": showSubMenu}') &#xe604;
+  span.cui-icon(v-if='hasSubMenu', :class='{"aside-menu-open": showSubMenu}') &#xe604;
 </template>
 
 <script>
 import './waves/waves.less'
+import './icons/iconfont.less'
 export default {
   props: {
     hasSubMenu: {

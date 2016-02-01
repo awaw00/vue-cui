@@ -91,7 +91,7 @@ div#app(:class='[themeStyle]')
         span Accent
       wave-button(:btn-type='["raised", "primary", "sharp"]')
         span Sharp
-    dialog-confirm(:show.sync='dialogConfirm.show', :btns='["ok"]')
+    dialog-confirm(:show.sync='dialogConfirm.show')
       {{dialogConfirm.content}}
 </template>
 

@@ -1,13 +1,14 @@
 <style lang='less'>
 @import './styles/color.less';
 .aside-container{
-  min-width: 260px;
+  width: 260px;
   &.aside-left{
     float: left;
     box-shadow: 1px 0 10px 1px rgba(0, 0, 0, 0.31);
   }
   &.aside-right{
     float: right;
+    box-shadow: -1px 0 10px 1px rgba(0, 0, 0, 0.31);
   }
   &.aside-fixed{
     position: fixed;
@@ -68,11 +69,11 @@ export default {
   props: {
     asideType: {
       type: Array,
-      default: ['left', 'fixed']
+      default: () => ['left', 'fixed']
     },
     menus: {
       type: Array,
-      default: []
+      default: () => []
     }
   },
   data () {

@@ -1,5 +1,4 @@
 <style lang='less'>
-@import "./icons/iconfont.less";
 @default-color: #FF5722;
 .select-input{
   font-size: 20px;
@@ -31,7 +30,7 @@
     line-height: 2em;
     border-bottom: 1px solid rgb(166, 166, 166);
     z-index: 1;
-    .iconfont{
+    .cui-icon{
       float: right;
       transition: ease all .3s;
       transform-origin: center;
@@ -80,7 +79,7 @@
 div.select-input
   label(:class='{"label-shrink": selected, "label-spread": !selected}') {{label}}
   span(@click='show = true') {{value}}
-    span.iconfont(:class='{"reversal": show}') &#xe601;
+    span.cui-icon(:class='{"reversal": show}') &#xe601;
   div.select-input-border(v-show='show', :transition='borderTransition')
   div.select-options.whiteframe-z2(v-show='show', :transition='optionsTransition')
     div.select-option(v-for='o in options', @click='selectOption(o)') {{o.value}}
@@ -90,6 +89,7 @@ div.select-input
 import './styles/common.less'
 import './styles/transition.less'
 import './styles/colorloop.less'
+import './icons/iconfont.less'
 export default {
   props: {
     label: {
@@ -112,12 +112,7 @@ export default {
       twoWay: true
     },
     options: {
-      type: Array,
-      default: [
-        { key: 1, value: '我'},
-        { key: 2, value: '是'},
-        { key: 3, value: '谁'}
-      ]
+      type: Array
     }
   },
   data () {
@@ -130,7 +125,7 @@ export default {
       return this.useTransition ? 'input-border' : ''
     },
     optionsTransition () {
-      return this.useTransition ? 'list' : ''
+      return this.useTransition ? 'select' : ''
     },
     selected () {
       return this.value && this.value.length >= 1
