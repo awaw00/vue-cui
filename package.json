@@ -1,6 +1,6 @@
 {
   "name": "vue-cui",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "colorful ui components for vue.js",
   "author": "Aaron Wang <aaron-wang@outlook.com>",
   "scripts": {
@@ -11,9 +11,9 @@
     "type": "git",
     "url": "https://github.com/awaw00/vue-cui.git"
   },
+  "license": "MIT",
   "main": "./src/index.js",
   "dependencies": {
-    "autoprefixer-loader": "^3.2.0",
     "jade": "^1.11.0",
     "jade-loader": "^0.8.0",
     "less": "^2.5.3",
@@ -23,6 +23,7 @@
     "vue": "^1.0.15"
   },
   "devDependencies": {
+    "autoprefixer": "^6.3.3",
     "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",

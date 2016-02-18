@@ -1,3 +1,71 @@
+.fade-transition{
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave{
+  opacity: 0;
+}
+.dialog-transition{
+
+}
+.dialog-enter{
+  animation: dialog-in .5s;
+}
+.dialog-leave{
+  animation: dialog-out .2s;
+}
+@keyframes dialog-in{
+  from{
+    transform: translateY(-100%);
+  }
+  40% {
+    transform: translateY(16%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes dialog-out{
+  from{
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(16%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+.bounce-transition {
+  display: inline-block; /* 否则 scale 动画不起作用 */
+}
+.bounce-enter {
+  animation: bounce-in .5s;
+}
+.bounce-leave {
+  animation: bounce-out .5s;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes bounce-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
 .select-transition{
   transition: all ease .3s;
   overflow: hidden;
